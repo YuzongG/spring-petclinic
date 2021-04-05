@@ -9,7 +9,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh './mvnw sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dlicense.skip=true'
+        sh './mvnw sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dlicense.skip=true -Dsonar.login="75fc2ea7d482e67eea394c58d10ff9cc4c98bfdf"'
       }
     }
 
