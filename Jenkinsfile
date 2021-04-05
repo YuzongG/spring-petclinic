@@ -18,7 +18,7 @@ pipeline {
         echo 'Starting to deploy...'
         sh '''./mvnw package
 '''
-        sh 'java -jar -Dserver.port=8083 target/*.jar'
+        sh 'java -jar -Dserver.port=8083 target/*.jar &'
       }
     }
 
