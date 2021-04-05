@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'mvn clean install -Dlicense.skip=True'
+        sh './mvnw clean install -Dlicense.skip=True'
       }
     }
 
