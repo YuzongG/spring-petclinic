@@ -1,5 +1,5 @@
 ---
-- hosts: 'vagrant@10.0.0.11'
+- hosts: 10.0.0.11
   gather_facts: no
 
   tasks:
