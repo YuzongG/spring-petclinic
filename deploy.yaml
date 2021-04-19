@@ -1,10 +1,14 @@
 ---
-- hosts: all
+- hosts: 'vagrant@10.0.0.11'
   gather_facts: no
 
   tasks:
     - name: deploy jar
-      shell: sudo cp /var/lib/jenkins/workspace/web/target/spring-petclinic-2.4.2.jar
+      copy:
+        src: "{{ playbook_dir }}/target"
+        dest: /home/vagrant/
+        owner: vagrant
+        directory_mode: yes
     
     - name: run the jar
       shell: java -jar -Dserver.port=8082 spring-petclinic-2.4.2.jar >/dev/null 2>&1 &
