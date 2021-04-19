@@ -1,2 +1,2 @@
-[web]
+[webservers]
 10.0.0.11 ansible_user=vagrant
