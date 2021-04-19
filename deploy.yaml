@@ -1,5 +1,5 @@
 ---
-- host: web
+- hosts: web
   task:
     - name: deploy jar
       shell: sudo cp /var/lib/jenkins/workspace/spring-petclinic_main/spring-petclinic-2.4.2.jar
