@@ -1,7 +1,7 @@
 ---
-- hosts: webservers
+- hosts: all
   gather_facts: no
-  
+
   tasks:
     - name: deploy jar
       shell: sudo cp /var/lib/jenkins/workspace/web/target/spring-petclinic-2.4.2.jar
