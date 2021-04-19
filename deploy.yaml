@@ -9,5 +9,5 @@
       owner: vagrant
       directory_mode: yes
   - name: Run web
-    shell: "sudo java -jar -Dserver.port=8082 spring-petclinic-2.4.2.jar"
+    shell: "sudo java -jar -Dserver.port=8082 /target/spring-petclinic-2.4.2.jar"
       
