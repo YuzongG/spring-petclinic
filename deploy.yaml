@@ -1,14 +1,15 @@
 ---
 - hosts: all
-  gather_facts: no
-
+  become: yes
   tasks:
-    - name: deploy jar
-      copy:
-        src: "{{ playbook_dir }}/target"
-        dest: /home/vagrant/
-        owner: vagrant
-        directory_mode: yes
-    
-    - name: run the jar
-      shell: java -jar -Dserver.port=8082 spring-petclinic-2.4.2.jar >/dev/null 2>&1 &
+  - name: Copy target files to host
+    copy:
+      src: "{{ playbook_dir }}/target"
+      dest: /home/vagrant/
+      owner: vagrant
+      directory_mode: yes
+  - name: Build docker image
+    shell: "sudo docker build -t xxx/petclinic ."
+  - name: Run docker container
+    shell: "sudo java -jar -Dserver.port=8082 spring-petclinic-2.4.2.jar >/dev/null 2>&1 &"
+      
