@@ -4,5 +4,5 @@
     - name: deploy jar
       shell: sudo cp /var/lib/jenkins/workspace/spring-petclinic_main/spring-petclinic-2.4.2.jar
     
-    -name: run the jar
+    - name: run the jar
       shell: java -jar -Dserver.port=8082 spring-petclinic-2.4.2.jar >/dev/null 2>&1 &
